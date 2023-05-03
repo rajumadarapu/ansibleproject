@@ -1,0 +1,14 @@
+---
+ - name: install package and start the package
+   hosts: all
+   tasks:
+      - name: installing the httpd package
+        yum: name=httpd stat=present
+        service: name=httpd stat=restarted enabled=yes
+        
+---
+ - name: creating the file
+   hosts: all
+   tasks: 
+      - name: creating the file
+        file: dest=/var/www/html/index.html stst=touch
