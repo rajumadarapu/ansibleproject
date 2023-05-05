@@ -2,5 +2,5 @@
  - name: output
    hosts: all
    tasks: 
-      - command: uname a
+      - command: uname -a
    
