@@ -1,0 +1,6 @@
+---
+ - name: output
+   hosts: all
+   tasks: 
+      - command: uname a
+   
