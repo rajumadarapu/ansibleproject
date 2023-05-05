@@ -1,0 +1,8 @@
+- name: create data in file
+   hosts: all
+   tasks:
+   - name: copy the data in file
+     copy: dest=/tmp/data content='wel come'
+
+   - name: data add
+     copy: dest=/tmp/data content='varains' backup=yes
