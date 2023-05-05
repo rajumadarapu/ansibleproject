@@ -1,0 +1,9 @@
+---
+ - name: httpd service 
+   hosts: all
+   tasks:
+	 - name: installing the httpd
+	   yum: name=httpd state=present
+	 - service: name=httpd state=restarted enabled=yes
+	 - file: dest=/var/www/htm/index.html state=touch
+	 - lineinfile: dest=/var/www/htm/index.html line='varains.com'
