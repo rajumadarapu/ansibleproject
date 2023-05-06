@@ -1,2 +1,15 @@
 ansible vlab1 -m ping 
 ansible vlab1 -a "uname -a"
+
+
+
+
+
+---
+ - name: without handlers
+   hosts: all
+   tasks:
+   - name: copy file
+     copy: src=/etc/fstab dest=/var/www/html/index.html
+   - name: restart httpd service
+     service: name=httpd state=restarted
