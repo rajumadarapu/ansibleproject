@@ -7,3 +7,20 @@
 	 - service: name=httpd state=restarted enabled=yes
 	 - file: dest=/var/www/htm/index.html state=touch
 	 - lineinfile: dest=/var/www/htm/index.html line='varains.com'
+
+
+
+
+
+---	 
+  - name: start,restart,stop and permanent the services	 
+   hosts: all
+   tasks:
+     - name: start and permanent the httpd service
+       service: name=httpd state=started enabled=yes
+
+     - name: restart the httpd service
+       service: name=httpd state=restarted
+
+     - name: stop the httpd service
+       service: name=httpd state=stopped enabled=no
