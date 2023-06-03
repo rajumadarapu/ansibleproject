@@ -1,0 +1,7 @@
+- name: Fetch file from remote host
+  hosts: all
+  tasks:
+    - name: Fetch log file
+      fetch:
+        src: /var/log/application.log
+        dest: /tmp/
